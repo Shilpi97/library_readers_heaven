@@ -62,6 +62,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>getbookidbyquantityservlet</display-name>
+    <servlet-name>getbookidbyquantityservlet</servlet-name>
+    <servlet-class>controller.getbookidbyquantityservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getbookidbyquantityservlet</servlet-name>
+    <url-pattern>/getbookidbyquantityservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>getcategoryservlet</display-name>
     <servlet-name>getcategoryservlet</servlet-name>
     <servlet-class>controller.getcategoryservlet</servlet-class>
@@ -79,6 +89,16 @@
   <servlet-mapping>
     <servlet-name>updatebookservlet</servlet-name>
     <url-pattern>/updatebookservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updatebookquantityservlet</display-name>
+    <servlet-name>updatebookquantityservlet</servlet-name>
+    <servlet-class>controller.updatebookquantityservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updatebookquantityservlet</servlet-name>
+    <url-pattern>/updatebookquantityservlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

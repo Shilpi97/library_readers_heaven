@@ -20,19 +20,19 @@ public class dashboardDAO {
 	        con = DBConnection.getInstance().getConnection();   
 	    }
 		
-		  public List<dashboardBean> getDashboardDetails(){
+		  public List<dashboardBean> getDashboardDetails(int user_id){
 			  Calendar now = Calendar.getInstance();
 		      List<dashboardBean> libraryList =new ArrayList<dashboardBean>();
 		      Statement stmt;
 		      dashboardBean b;
 		      try {
-		    	 
+		    	 System.out.println("aayushi hii"+user_id);
 		        int ysale=0;
 		        int msale=0;
 		        int dsale=0;
 		        b = new dashboardBean();
 		    	  stmt = con.createStatement();        
-		          ResultSet rs = stmt.executeQuery("SELECT * FROM `rent` as ra,`library_book_mapping` as b,`book` as ba where b.branch_id=1 and ba.book_id=b.book_id and ra.library_book_mapping_id=b.library_book_mapping_id");
+		          ResultSet rs = stmt.executeQuery("SELECT * FROM `rent` as ra,`library_book_mapping` as b,`book` as ba where b.branch_id="+user_id+" and ba.book_id=b.book_id and ra.library_book_mapping_id=b.library_book_mapping_id");
 		         
 		          
 		          int y=now.get(Calendar.YEAR);

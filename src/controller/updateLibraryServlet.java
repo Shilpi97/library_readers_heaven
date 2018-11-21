@@ -7,20 +7,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.dashboardDAO;
-import bean.dashboardBean;
-import java.util.List;
+import DAO.libraryDAO;
+import bean.userBean;
 
 /**
  * Servlet implementation class loginServlet
  */
-public class dashboardServlet extends HttpServlet {
+public class updateLibraryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public dashboardServlet() {
+    public updateLibraryServlet() {
     //    super();
         // TODO Auto-generated constructor stub
     }
@@ -31,21 +30,7 @@ public class dashboardServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	//	System.out.println("happy birthday");
-	
-		List<dashboardBean> listOfLibrary = null;
-		String str=request.getParameter("action");
-			try { HttpSession session=request.getSession();	
-			Integer user_id=(Integer)session.getAttribute("user_id");
-				System.out.println("in try");
-			listOfLibrary = new dashboardDAO().getDashboardDetails(user_id);
-			request.setAttribute("listOfLibrary", listOfLibrary);
-			request.getRequestDispatcher(str).forward(request, response);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("in catch");
-			e.printStackTrace();
-			}
-
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 	//System.out.println("happy birthday");
 	/**
@@ -53,7 +38,31 @@ public class dashboardServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//System.out.println("hii shilpi");
+		System.out.println("hii shilpi");
+		
+		String library_name=request.getParameter("library_name");
+		String branch_name=request.getParameter("branch_name");
+		String email=request.getParameter("email");
+		String branch_address=request.getParameter("branch_address");
+		
+		int library_address_id=Integer.parseInt(request.getParameter("id"));
+		System.out.println("hii ");
+		int pincode=Integer.parseInt(request.getParameter("pincode"));
+		String mobile_no=request.getParameter("mobile_no");
+		try {
+			
+				
+				if (new libraryDAO().updateLibraryAddress(library_name,library_address_id,branch_name,branch_address, mobile_no, pincode, email)) {
+					
+					
+					response.sendRedirect("./library.jsp");
+				}
+		
+		}
+		catch(Exception e)
+		{
+			System.out.println("Login Servlet "+e);
+		}
 	}
 
 }

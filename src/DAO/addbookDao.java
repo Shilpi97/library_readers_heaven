@@ -219,8 +219,30 @@ public int updatebook(String book_title,String author,int edition,String publish
 	
 	
 }
-		      
-
+//book_title,modified_on,id,user_id,count		      
+public int updatebookquantity(String book_title,String modified_on,int id,int user_id,int count) {
+	int n=0;
+	
+	//int id=0;
+	try {
+		
+		
+		String query1="Update library_book_mapping set count=" + count + " where book_id= " + id + " and branch_id= "+user_id+ "";
+		//String query="update admin set email= '" + email + "' , password='" + password + "' where admin_id = " + id + " ; "; 
+	//System.out.println(query);
+		Statement stmt1 = con.createStatement();
+		n = stmt1.executeUpdate( query1 );
+		
+		
+		
+	}
+	 catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+	return n;
+	
+	
+}
 			
 	
 }

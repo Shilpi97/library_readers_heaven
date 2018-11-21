@@ -105,7 +105,7 @@
                                 
                             </div>
                             <button class="btn btn-success btn-block loginbtn" value="Login">Login</button>
-                          
+                          <div style="margin-top:10px; text-decoration:underline; color:blue !important;"><a href="addlibrary.jsp">Not registered yet?</a></div>
                         </form>
                     </div>
                 </div>

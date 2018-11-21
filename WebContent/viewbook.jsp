@@ -118,7 +118,7 @@
                         <div class="product-status-wrap">
                             <h4>Book List</h4>
                             <div class="add-product">
-                                <a href="#">Add Library</a>
+                                <a href="addbook.jsp">Add Book</a>
                             </div>
                             <table>
                                 <tr>
@@ -165,7 +165,8 @@
 									<td><%=book.getBook_language() %></td>
 									 <td>
                                        <a href="./updatebook.jsp?id=<%=book.getBook_id()%>"> <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></td>
-                                      <td> <a href="./deletebookservlet?id=<%=book.getBook_id()%>"> <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a></td> 
+                                      <td> <a href="./deletebookservlet?id=<%=book.getBook_id()%>"> <button data-toggle="tooltip" title="Delete" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a></td>
+                                       <td> <a href="./updatebookquantity.jsp?id=<%=book.getBook_id()%>"> <button data-toggle="tooltip" title="Update Quantity" class="pd-setting-ed">Update Quantity</button></a></td> 
                                     
 									
 									

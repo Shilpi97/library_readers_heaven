@@ -7,20 +7,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.dashboardDAO;
-import bean.dashboardBean;
+import DAO.libraryDAO;
+import bean.library_joinBean;
 import java.util.List;
 
 /**
  * Servlet implementation class loginServlet
  */
-public class dashboardServlet extends HttpServlet {
+public class libraryDetailsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public dashboardServlet() {
+    public libraryDetailsServlet() {
     //    super();
         // TODO Auto-generated constructor stub
     }
@@ -31,13 +31,12 @@ public class dashboardServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	//	System.out.println("happy birthday");
-	
-		List<dashboardBean> listOfLibrary = null;
+		int id=Integer.parseInt(request.getParameter("id"));
+		List<library_joinBean> listOfLibrary = null;
 		String str=request.getParameter("action");
-			try { HttpSession session=request.getSession();	
-			Integer user_id=(Integer)session.getAttribute("user_id");
+			try {
 				System.out.println("in try");
-			listOfLibrary = new dashboardDAO().getDashboardDetails(user_id);
+			listOfLibrary = new libraryDAO().getLibrary(id);
 			request.setAttribute("listOfLibrary", listOfLibrary);
 			request.getRequestDispatcher(str).forward(request, response);
 		} catch (Exception e) {

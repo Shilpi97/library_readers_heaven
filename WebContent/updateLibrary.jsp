@@ -1,12 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+        <%@page autoFlush="true" buffer="1094kb"%>
+    <%@page import="java.util.ArrayList" %>
+    <%@page import="java.util.List" %>
+    <%@page import="bean.library_joinBean" %>
+    <%@page import="bean.bookBean" %>
+ 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add Library | Reader's Heaven</title>
+    <title>Update Library | Reader's Heaven</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -73,7 +79,7 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+<%int id=Integer.parseInt(request.getParameter("id"));%>
     
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
@@ -98,7 +104,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Add Library</span>
+                                            <li><span class="bread-blod">upadte Library</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -129,14 +135,27 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="all-form-element-inner">
-                                                <form action="./addlibraryServlet" method="post">
+                            <%List<library_joinBean>b=(ArrayList)request.getAttribute("listOfLibrary");
+							if(b==null){ %>
+							 <jsp:forward page="/libraryDetailsServlet?action=updateLibrary.jsp" />
+		 					<% }else{
+		 						b=(ArrayList)request.getAttribute("listOfLibrary");%>
+		 				
+		 						<% 
+		 						for(int i=0;i<b.size();i++)
+								{
+									library_joinBean book=b.get(i);
+		 					
+							%>
+                                            
+                                                <form action="./updateLibraryServlet?id=<%=id%>" method="post">
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                 <label class="login2 pull-right pull-right-pro">Library Name</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Enter Library Name" name="library_name" />
+                                                                <input type="text" class="form-control" placeholder="Enter Library Name" name="library_name" value="<%=book.getLibrary_name() %>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -146,7 +165,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Branch Name</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name"/>
+                                                                <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name" value="<%=book.getBranch_name() %>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -156,37 +175,18 @@
                                                                 <label class="login2 pull-right pull-right-pro">Email</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="email" class="form-control" placeholder="Enter Email id" name="email"/>
+                                                                <input type="email" class="form-control" placeholder="Enter Email id" name="email" value="<%=book.getEmail() %>"/>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Password</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="password" class="form-control" placeholder="Enter Password"  name="password"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <label class="login2 pull-right pull-right-pro">Confirm Password</label>
-                                                            </div>
-                                                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="password" class="form-control" placeholder="Enter conifrm Password"  name="cpassword"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                 <label class="login2 pull-right pull-right-pro">Branch Address</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Enter Library Adress" name="branch_address"/>
+                                                               <input type="text" class="form-control" placeholder="Enter Library Adress" name="branch_address" value="<%=book.getBranch_address()%>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -200,7 +200,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                                         <div class="form-select-list">
-                                                                            <input type="text" class="form-control basic-ele-mg-b-10" placeholder="Pincode" name="pincode">
+                                                                            <input type="text" class="form-control basic-ele-mg-b-10" placeholder="Pincode" name="pincode" value="<%=book.getPincode() %>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -210,7 +210,7 @@
                                                                     </div>
                                                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                                                         <div class="form-select-list">
-                                                                            <input type="text" class="form-control" placeholder="Enter Mobile No." name="mobile_no">
+                                                                            <input type="text" class="form-control" placeholder="Enter Mobile No." name="mobile_no" value="<%=book.getContact_no() %>">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -224,14 +224,16 @@
                                                                 <div class="col-lg-3"></div>
                                                                 <div class="col-lg-9">
                                                                     <div class="login-horizental cancel-wp pull-left">
-                                                                        <button class="btn btn-white" type="reset">Cancel</button>
-                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button>
+                                                                        
+                                                                        <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Update</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </form>
+                                                <% }
+		 						} %>
                                             </div>
                                         </div>
                                     </div>
