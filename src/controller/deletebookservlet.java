@@ -1,25 +1,37 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+//import javax.servlet.http.HttpSession;
+import java.util.List;
+
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import DAO.addbookDao;
 import DAO.loginDAO;
-import bean.library_addressBean;
+//import DAO.loginDAO;
+import bean.addbookBean;
+import bean.userBean;
 
 /**
- * Servlet implementation class loginServlet
+ * Servlet implementation class addbookServlet
  */
-public class loginServlet extends HttpServlet {
+public class deletebookservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginServlet() {
+    public deletebookservlet() {
     //    super();
         // TODO Auto-generated constructor stub
     }
@@ -30,37 +42,35 @@ public class loginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	//	System.out.println("happy birthday");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		HttpSession session=request.getSession();	
+		Integer user_id=(Integer)session.getAttribute("user_id");
+		int id=Integer.parseInt(request.getParameter("id"));
+		try {
+			if(new addbookDao().deleteBook(id,user_id)) {
+				response.sendRedirect("./viewbook.jsp");
+			}
+			else {
+				response.sendRedirect("./viewbook.jsp");
+			}
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
 	}
+		
+	
+	
 	//System.out.println("happy birthday");
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//System.out.println("hii shilpi");
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
-		try {
-			System.out.println("hii shilpi in try");
-		library_addressBean user=new loginDAO().checkLogin(email, password);
-		System.out.println("hii shilpi after checklogin");
-		if(user!=null)
-		{
-			HttpSession session=request.getSession();	
-			session.setAttribute("user_id", user.getLibrary_address_id());
-			response.sendRedirect("dashboard.jsp");
-		}
-		else
-		{
-			response.sendRedirect("index.jsp");
-		}
 		
-		}
-		catch(Exception e)
-		{
-			System.out.println("Login Servlet "+e);
-		}
-	}
+		
+		
+		
+		
 
+}
 }

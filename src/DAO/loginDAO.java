@@ -16,7 +16,26 @@ public class loginDAO {
 			//System.out.println("hii shilpi in database");
 	        con = DBConnection.getInstance().getConnection();   
 	    }
-		
+		public int changePassword(int id,String password) {
+			int n=0;
+			System.out.println("id"+id);
+			//int id=0;
+			try {
+				String query="update library_address set password='" + password + "' where library_id = " + id + "  "; 
+			
+				Statement stmt = con.createStatement();
+				n = stmt.executeUpdate( query );
+				
+				
+				
+			}
+			 catch(SQLException e) {
+		            System.out.println(e.getMessage());
+		        }
+			return n;
+			
+			
+		}
 		public library_addressBean checkLogin(String email,String password) {
 			//System.out.println("hii shilpi in dao");
 			Statement stmt;

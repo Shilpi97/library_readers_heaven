@@ -13,7 +13,7 @@ public class library_addressBean {
 	private int latitude;
 	private String email;
 	private String password;
-	
+	private int library_status;
 	public int getLibrary_address_id() {
 		return library_address_id;
 	}
@@ -79,5 +79,11 @@ public class library_addressBean {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public int getLibrary_status() {
+		return library_status;
+	}
+	public void setLibrary_status(int library_status) {
+		this.library_status = library_status;
 	}
 }
