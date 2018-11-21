@@ -44,8 +44,9 @@ public class updateLibraryServlet extends HttpServlet {
 		String branch_name=request.getParameter("branch_name");
 		String email=request.getParameter("email");
 		String branch_address=request.getParameter("branch_address");
-		
-		int library_address_id=Integer.parseInt(request.getParameter("id"));
+		HttpSession session=request.getSession();
+		Integer library_address_id=(Integer)session.getAttribute("user_id");
+		//int library_address_id=Integer.parseInt(request.getParameter("id"));
 		System.out.println("hii ");
 		int pincode=Integer.parseInt(request.getParameter("pincode"));
 		String mobile_no=request.getParameter("mobile_no");
@@ -55,7 +56,7 @@ public class updateLibraryServlet extends HttpServlet {
 				if (new libraryDAO().updateLibraryAddress(library_name,library_address_id,branch_name,branch_address, mobile_no, pincode, email)) {
 					
 					
-					response.sendRedirect("./library.jsp");
+					response.sendRedirect("./dashboard.jsp");
 				}
 		
 		}

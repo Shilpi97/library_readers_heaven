@@ -31,10 +31,12 @@ public class libraryDetailsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	//	System.out.println("happy birthday");
-		int id=Integer.parseInt(request.getParameter("id"));
+		//int id=Integer.parseInt(request.getParameter("id"));
 		List<library_joinBean> listOfLibrary = null;
 		String str=request.getParameter("action");
 			try {
+				HttpSession session=request.getSession();
+		Integer id=(Integer)session.getAttribute("user_id");
 				System.out.println("in try");
 			listOfLibrary = new libraryDAO().getLibrary(id);
 			request.setAttribute("listOfLibrary", listOfLibrary);

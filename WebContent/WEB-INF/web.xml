@@ -82,6 +82,26 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>updateLibraryServlet</display-name>
+    <servlet-name>updateLibraryServlet</servlet-name>
+    <servlet-class>controller.updateLibraryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateLibraryServlet</servlet-name>
+    <url-pattern>/updateLibraryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>libraryDetailsServlet</display-name>
+    <servlet-name>libraryDetailsServlet</servlet-name>
+    <servlet-class>controller.libraryDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>libraryDetailsServlet</servlet-name>
+    <url-pattern>/libraryDetailsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>updatebookservlet</display-name>
     <servlet-name>updatebookservlet</servlet-name>
     <servlet-class>controller.updatebookservlet</servlet-class>

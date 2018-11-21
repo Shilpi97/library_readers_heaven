@@ -79,7 +79,7 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-<%int id=Integer.parseInt(request.getParameter("id"));%>
+<!--<%int id=Integer.parseInt(request.getParameter("id"));%>-->
     
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
@@ -148,7 +148,7 @@
 		 					
 							%>
                                             
-                                                <form action="./updateLibraryServlet?id=<%=id%>" method="post">
+                                                <form action="./updateLibraryServlet" method="post">
                                                     <div class="form-group-inner">
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -250,7 +250,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                            <p>Copyright ï¿½ 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
                         </div>
                     </div>
                 </div>
