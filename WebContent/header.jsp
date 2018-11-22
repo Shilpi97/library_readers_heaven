@@ -23,11 +23,11 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                        <div class="header-right-info">
+                                        <div class="header-right-info" style="margin-right:5%;">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                                
                                               
-                                                <li class="nav-item">
+                                                <li class="nav-item" >
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
 															<i class="fa fa-user adminpro-user-rounded header-riht-inf" aria-hidden="true"></i>
 															<span class="admin-name">Library</span>
@@ -37,7 +37,7 @@
                                                        
                                                         <li><a href="changepasswordlibrary.jsp"><span class="fa fa-lock author-log-ic"></span>Change Password</a>
                                                         </li>
-                                                        <li><a href="updateLibrary.jsp"><span class="fa fa-lock author-log-ic"></span>Update Profile</a>
+                                                        <li><a href="updateLibrary.jsp"><span class="fa fa-pencil author-log-ic"></span>Update Profile</a>
                                                         </li>
                                                       <!--   <li><a href="lock.html"><span class="fa fa-diamond author-log-ic"></span> Lock</a>
                                                         </li> 

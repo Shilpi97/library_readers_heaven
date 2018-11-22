@@ -186,31 +186,25 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="caption pro-sl-hd">
-                                            <span class="caption-subject text-uppercase"><b>Product Sales</b></span>
+                                            <span class="caption-subject text-uppercase"><b>Total Sales</b></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="actions graph-rp">
                                             <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-grey active">
-													<input type="radio" name="options" class="toggle" id="option1" checked="">Today</label>
-                                                <label class="btn btn-grey">
-													<input type="radio" name="options" class="toggle" id="option2">Week</label>
-                                            </div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <ul class="list-inline cus-product-sl-rp">
                                 <li>
-                                    <h5><i class="fa fa-circle" style="color: #24caa1;"></i>Bags</h5>
+                                    <h5><i class="fa fa-circle" style="color: #ffcc00;"></i>Books</h5>
                                 </li>
                                 <li>
-                                    <h5><i class="fa fa-circle" style="color: #00b5c2;"></i>Shoes</h5>
+                                    <h5><i class="fa fa-circle" style="color: #4d9900;"></i>Rent</h5>
                                 </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #ff7f5a;"></i>Jewelery</h5>
-                                </li>
+                                
                             </ul>
                             <div id="morris-area-chart" style="height: 356px;"></div>
                         </div>
