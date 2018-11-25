@@ -122,7 +122,7 @@
                         <div class="sparkline12-list">
                             <div class="sparkline12-hd">
                                 <div class="main-sparkline12-hd">
-                                    <h1>UPDATE BOOK</h1>
+                                    <h1>UPDATE BOOK QUANTITY</h1>
                                 </div>
                             </div>
                             

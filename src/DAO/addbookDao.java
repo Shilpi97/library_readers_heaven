@@ -57,12 +57,15 @@ public class addbookDao {
 				n = stmt.executeUpdate( query );
 				
 				String select="select book_id from book order by book_id desc limit 1";
+				
 				ResultSet rs = stmt.executeQuery( select );
 				while(rs.next()) {
+					System.out.println("hiiii");
 				id=rs.getInt("book_id");
+				System.out.println("new id is:"+id);
 				
-				String query1="insert into library_book_mapping values(null,"+user_id+","+id+","+count+");";
-				
+				String query1="insert into library_book_mapping values(null,"+user_id+","+id+","+count+",'"+strDate+"');";
+				System.out.println("query"+query1);
 				Statement stmt1 = con.createStatement();
 				n1 = stmt1.executeUpdate( query1 );
 				if(n1>0) {
@@ -76,7 +79,7 @@ public class addbookDao {
 			
 				
 				
-				
+				return n;
 				
 				
 			}
