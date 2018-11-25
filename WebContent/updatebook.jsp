@@ -152,7 +152,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Name Of The Book</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Name Of The Book" name="book_title" value="<%= books.getBook_title() %>"  />
+                                                                <input type="text" class="form-control" placeholder="Name Of The Book" name="book_title" title="only character and numbers" pattern="^[a-zA-Z0-9\s]*$" value="<%= books.getBook_title() %>"  />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -162,7 +162,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Author</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Author"name="author" value=" <%= books.getAuthor() %>" />
+                                                                <input type="text" class="form-control" placeholder="Author"name="author" title="only characters" pattern="^[a-zA-Z\s]*$" value=" <%= books.getAuthor() %>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -172,7 +172,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Edition</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Edition" name="edition" value="<%= books.getEdition() %>"/>
+                                                                <input type="text" class="form-control" placeholder="Edition" name="edition" title="only digit till 3 " pattern="^[0-9]{1,3}" value="<%= books.getEdition() %>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -182,7 +182,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Publisher</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Publisher" name="publisher" value="<%= books.getPublisher() %>" />
+                                                                <input type="text" class="form-control" placeholder="Publisher" name="publisher" title="only character" pattern="^[a-zA-Z\s]*$" value="<%= books.getPublisher() %>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -192,7 +192,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">IsbnNo</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="IsbnNo" name="isbn" value="<%= books.getIsbn() %>" />
+                                                                <input type="text" class="form-control" placeholder="IsbnNo" name="isbn" title="only digit between 10 to 13 characters" pattern="^[0-9]{10,13}" value="<%= books.getIsbn() %>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -202,7 +202,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">No Of Pages</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="No Of Pages" name="pages" value="<%= books.getPages() %>" />
+                                                                <input type="text" class="form-control" placeholder="No Of Pages" name="pages" title="only  digits" pattern="^[0-9]{1,5}" value="<%= books.getPages() %>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -212,7 +212,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Mrp</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Mrp"  name="mrp" value="<%= books.getMrp() %>"/>
+                                                                <input type="text" class="form-control" placeholder="Mrp"  name="mrp" title="only digits" pattern="^[0-9]{1,8}" value="<%= books.getMrp() %>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -222,7 +222,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Description</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Description" name="description" value="<%= books.getDescription() %>" />
+                                                                <input type="text" class="form-control" placeholder="Description" name="description" title="only character" pattern="^[a-zA-Z0-9,.\s]*$" value="<%= books.getDescription() %>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -232,7 +232,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Publishing Year</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Publishing Year" name="publish_year" value="<%= books.getPublish_year() %>" />
+                                                                <input type="text" class="form-control" placeholder="Publishing Year" name="publish_year" title="only digits in form of xxxx" pattern="^[0-9]{4}" value="<%= books.getPublish_year() %>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -242,7 +242,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Quantity</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Quantity" name="count" value="<%= books.getCount() %>"/>
+                                                                <input type="text" class="form-control" placeholder="Quantity" name="count" title="Only digits" pattern="^[0-9]{8}" value="<%= books.getCount() %>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -252,7 +252,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Language</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Language" name="book_language" value="<%= books.getBook_language() %>"/>
+                                                                <input type="text" class="form-control" placeholder="Language" name="book_language" title="only character" pattern="^[a-zA-Z\s]*$"value="<%= books.getBook_language() %>"/>
                                                             </div>
                                                         </div>
                                                     </div>

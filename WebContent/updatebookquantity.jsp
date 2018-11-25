@@ -152,7 +152,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Name Of The Book</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Name Of The Book" name="book_title" value="<%= books.getBook_title() %>"  />
+                                                                <input type="text" class="form-control" placeholder="Name Of The Book" name="book_title" title="only character and numbers" pattern="^[a-zA-Z0-9\s]*$" value="<%= books.getBook_title() %>"  />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -163,7 +163,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Quantity</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Quantity" name="count" value="<%= books.getCount() %>"/>
+                                                                <input type="text" class="form-control" placeholder="Quantity" name="count" title="Only digits" pattern="^[0-9]{8}" value="<%= books.getCount() %>"/>
                                                             </div>
                                                         </div>
                                                     </div>

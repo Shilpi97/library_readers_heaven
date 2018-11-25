@@ -170,7 +170,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Name Of The Book</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Name Of The Book" name="book_title" />
+                                                                <input type="text" class="form-control" placeholder="Name Of The Book" name="book_title"  title="only Characters and digits" pattern="[a-zA-Z0-9\s]*$"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -180,7 +180,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Author</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Author"name="author" />
+                                                                <input type="text" class="form-control" placeholder="Author"name="author" title="only Characters" pattern="[a-zA-Z\s]*$" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -190,7 +190,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Edition</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Edition" name="edition"/>
+                                                                <input type="text" class="form-control" placeholder="Edition" name="edition" title="only digits" pattern="[0-9]{1,3}"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -200,7 +200,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Publisher</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Publisher" name="publisher" />
+                                                                <input type="text" class="form-control" placeholder="Publisher" name="publisher" title="only Characters" pattern="[a-zA-Z\s]*$" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -210,7 +210,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">IsbnNo</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="IsbnNo" name="isbn" />
+                                                                <input type="text" class="form-control" placeholder="IsbnNo" name="isbn" title="only digits between 10 to 13 characters" pattern="[0-9]{10,13}" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -220,7 +220,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">No Of Pages</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="No Of Pages" name="pages" />
+                                                                <input type="text" class="form-control" placeholder="No Of Pages" name="pages" title="only digits" pattern="[0-9]{1,8}" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -230,7 +230,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Mrp</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Mrp"  name="mrp"/>
+                                                                <input type="text" class="form-control" placeholder="Mrp"  name="mrp" title="only digits" pattern="[0-9]{1,8}"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -240,7 +240,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Description</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Description" name="description" />
+                                                                <input type="text" class="form-control" placeholder="Description" name="description" title="only Characters and digits" pattern="[a-zA-Z0-9,.\s]*$" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -250,7 +250,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Publishing Year</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Publishing Year" name="publish_year" />
+                                                                <input type="text" class="form-control" placeholder="Publishing Year" name="publish_year" title="only 4 digits" pattern="[0-9]{4}" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -260,7 +260,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Quantity</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Quantity" name="count" />
+                                                                <input type="text" class="form-control" placeholder="Quantity" name="count" title="only digits" pattern="[0-9]{1,8}" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -270,7 +270,7 @@
                                                                 <label class="login2 pull-right pull-right-pro">Language</label>
                                                             </div>
                                                             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                                <input type="text" class="form-control" placeholder="Language" name="book_language"/>
+                                                                <input type="text" class="form-control" placeholder="Language" name="book_language" title="only Characters" pattern="[a-zA-Z\s]*$"/>
                                                             </div>
                                                         </div>
                                                     </div>
